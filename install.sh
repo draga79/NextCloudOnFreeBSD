@@ -169,12 +169,12 @@ chown www:www "${DATA_DIRECTORY}"
 # Create Nextcloud database, secure database, set MariaDB root password, create Nextcloud DB, user, and password
 #
 mariadb -u root -e "DELETE FROM mysql.user WHERE User='';"
-mariadb -u root -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
+mariadb -u root -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('${IP_ADDRESS}', '127.0.0.1', '::1');"
 mariadb -u root -e "DROP DATABASE IF EXISTS test;"
 mariadb -u root -e "DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';"
 mariadb -u root -e "CREATE DATABASE ${DB_NAME} CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
-mariadb -u root -e "CREATE USER '${DB_USERNAME}'@'localhost' IDENTIFIED BY '${DB_PASSWORD}';"
-mariadb -u root -e "GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${DB_USERNAME}'@'localhost';"
+mariadb -u root -e "CREATE USER '${DB_USERNAME}'@'${IP_ADDRESS}' IDENTIFIED BY '${DB_PASSWORD}';"
+mariadb -u root -e "GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${DB_USERNAME}'@'${IP_ADDRESS}';"
 mariadb -u root -e "FLUSH PRIVILEGES;"
 mariadb-admin --user=root password "${DB_ROOT_PASSWORD}" reload
 

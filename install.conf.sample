@@ -6,11 +6,11 @@ EMAIL_USERNAME="nextcloud-admin"                     # Used for the `ServerAdmin
 HOST_NAME="nextcloud.my.network"                     # Set to the same as the entry in your DNS server (See line 184 in install.sh)
 IP_ADDRESS="IP_ADDRESS_VALUE"
 SERVER_EMAIL="nextcloud-alert"                       # will have ${HOST_NAME} automatically appened, used to send out alerts from the server by `sendmail`
-NEXTCLOUD_VERSION="27"                               # v27 tested
+NEXTCLOUD_VERSION="28"                               # v27 tested
 WWW_DIR="/usr/local/www"                             # NOTE: no trailing /
 SSL_DIRECTORY="/usr/local/www/ssl"                   # NOTE: no trailing /, SSL_DIRECTORY="OFF" if you want to disable SSL (eg. using reverse proxy with SSL)
-COUNTRY_CODE="XW"                                    # Example: US/UK/CA/AU/DE, etc.
-TIME_ZONE="Etc/GMT"                                  # See: https://www.php.net/manual/en/timezones.php
+COUNTRY_CODE="IT"                                    # Example: US/UK/CA/AU/DE, etc.
+TIME_ZONE="Europe/Rome"                                  # See: https://www.php.net/manual/en/timezones.php
 
 # Do not modify the 2 variables below, they are populated by values above.
 OPENSSL_REQUEST="/C=${COUNTRY_CODE}/CN=${HOST_NAME}" # This populates the `-subj` field of the `openssl` request
