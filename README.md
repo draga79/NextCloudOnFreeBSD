@@ -21,10 +21,10 @@ This script follows recommended configuration as per https://docs.nextcloud.com/
 
 **Installs the following:**
 
-* Nextcloud 27
+* Nextcloud 28
 * Apache 2.4
 * MariaDB 10.6
-* PHP 8.2 (plus all php-extensions required)
+* PHP 8.3 (plus all php-extensions required)
 * Redis
 * ClamAV
 
